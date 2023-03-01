@@ -1,0 +1,11 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}New Produit{% endblock %}
+
+{% block content %}
+    <h1>Create new Produit</h1>
+
+    {{ include('produit/_form.html.twig') }}
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('produit_back') }}">back to list</a>
+{% endblock %}

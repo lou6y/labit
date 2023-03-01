@@ -1,0 +1,44 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block content %}
+    <h1>Commande index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>DateCmd</th>
+            <th>PrixTotale</th>
+            <th>Observation</th>
+            <th>Confirmation</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.DateCmd ? commande.DateCmd|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.PrixTotale }}</td>
+                <td>{{ commande.Observation }}</td>
+                <td>{{ commande.Confirmed ? 'Confirmed' : 'Not Confirmed' }}</td>
+                <td> <a href="{{ path('commande_show', {'id': commande.id}) }}">show</a> </td>
+                {% if commande.Confirmed ==0 %}
+                    <td> <a href="{{ path('commande_confirm', {'idcommande': commande.id}) }}">confirm</a> </td>
+                {% else %}
+                    <td> <a href="{{ path('facture', {'idcmd': commande.id}) }}">facture</a> </td>
+                {% endif %}
+
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

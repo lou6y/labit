@@ -1,0 +1,45 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+{% block content %}
+    <h1>Liste des utilisateurs</h1>
+    <table class="table">
+        <thead>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Rôles</th>
+        <th>Actions</th>
+        <th></th>
+        </thead>
+        <tbody>
+        {# On boucle sur les utilisateurs #}
+        {% for user in user %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {# On boucle sur les rôles #}
+                    {% for role in user.roles %}
+                        {% if role == "ROLE_USER" %}
+                            Utilisateur
+                        {% elseif role == "ROLE_MODERATOR" %}
+                            Moderateur
+                        {% elseif role == "ROLE_ADMIN" %}
+                            Administrateur
+                        {% endif %}
+                    {% endfor %}
+                </td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td><a class="btn btn-block btn-outline-success" href="{{ path('edituser', {'id': user.id}) }}" >Modifier</a></td>
+                <td><a class="btn btn-block btn-outline-danger" href="{{ path('deleteuser', {'id': user.id}) }}" onclick="return confirm('Etes vous sûr de supprimer cet user?');">Supprimer</a></td>
+                {% endif %}
+            </tr>
+
+        {% else %}
+            <p>Aucun utilisateur inscrit</p>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

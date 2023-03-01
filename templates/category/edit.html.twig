@@ -1,0 +1,12 @@
+{% extends 'backend/baseback.html.twig' %}
+{% block title %}Edit Category{% endblock %}
+
+{% block content %}
+    <h1>Edit Category</h1>
+
+    {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('category_back') }}">back to list</a>
+
+    {{ include('category/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Commandes{% endblock %}
+
+{% block content %}
+<section class="section-md bg-default decor-text" data-content="Commande">
+    <div class="container">
+    <h4 style="margin-left:auto; margin-right: auto" class="heading-decorated">Mes commandes ( {{ app.user.commandes | length }} )</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>DateCmd</th>
+                <th>PrixTotale</th>
+                <th>Observation</th>
+                <th>Confirmation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+            <tr>
+                <td>{{ commande.id }}</td>
+                <td>{{ commande.DateCmd ? commande.DateCmd|date('Y-m-d') : '' }}</td>
+                <td>{{ commande.PrixTotale }}</td>
+                <td>{{ commande.Observation }}</td>
+                <td>{{ commande.Confirmed ? 'Confirmed' : 'Not Confirmed' }}</td>
+                <td>
+                    <a href="{{ path('commande_showfront', {'id': commande.id}) }}">Show</a>
+                </td>
+                    {% if commande.Confirmed ==0 %}
+                   <td> <a href="{{ path('commande_edit', {'id': commande.id}) }}">Edit</a> </td>
+                    {% else %}
+                        <td> <a href="{{ path('facture', {'idcmd': commande.id}) }}" target="_blank" >Facture</a> </td>
+                    {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('cart_index') }}">Back to Panier</a>
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('produit_index') }}">Back to produits</a>
+    </div>
+</section>
+{% endblock %}

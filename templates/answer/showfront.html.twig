@@ -1,0 +1,22 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Answer{% endblock %}
+
+{% block content %}
+    <h1>Answer</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>DateAns</th>
+            <td>{{ answer.DateAns ? answer.DateAns|date('Y-m-d') : '' }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ answer.Description }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('message_index') }}">Back to list</a>
+{% endblock %}

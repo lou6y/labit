@@ -1,0 +1,20 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Edit Message{% endblock %}
+
+{% block content %}
+<main>
+    <section class="section-md bg-default decor-text" >
+        <div class="container">
+    <h4 class="heading-decorated">Edit Message</h4>
+
+    {{ include('message/_form.html.twig', {'button_label': 'Update'}) }}
+            {{ include('message/_delete_form.html.twig') }}
+
+    <a href="{{ path('message_index') }}">Back to list</a>
+
+
+        </div>
+    </section>
+</main>
+{% endblock %}

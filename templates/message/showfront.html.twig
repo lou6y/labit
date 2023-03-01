@@ -1,0 +1,44 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Message{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="section-md bg-default decor-text" >
+            <div class="container">
+                <h4 class="heading-decorated">Message</h4>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ message.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>DateMsg</th>
+                        <td>{{ message.DateMsg ? message.DateMsg|date('Y-m-d') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Object</th>
+                        <td>{{ message.Object }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description</th>
+                        <td>{{ message.Description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Statut</th>
+                        <td>{{ message.Statut ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('message_index') }}">Back to list</a>
+
+                <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('message_edit', {'id': message.id}) }}">Edit</a>
+
+                {{ include('message/_delete_form.html.twig') }}
+            </div>
+        </section>
+    </main>
+{% endblock %}

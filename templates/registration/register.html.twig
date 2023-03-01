@@ -1,0 +1,30 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<main>
+    <section class="section-md bg-default decor-text" data-content="Register">
+        <div class="container">
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+            <div style="margin-left: auto; margin-right: auto;" class="col-md-7 col-lg-8">
+    <h4 style="text-align: center;" class="heading-decorated">Inscription</h4>
+
+    {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.username) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword, {label: 'Password'}) }}
+                {{ form_row(registrationForm.confirmpassword) }}
+                {{ form_row(registrationForm.agreeTerms) }}
+
+        <button class="button button-primary button-shadow" type="submit" class="btn">Register</button>
+
+                <a href="{{ path('login') }}"> &nbsp; &nbsp; &nbsp; &nbsp;I already have an account</a>
+    {{ form_end(registrationForm) }}
+        </div>
+        </div>
+    </section>
+    <main/>
+{% endblock %}

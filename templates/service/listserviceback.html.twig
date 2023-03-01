@@ -1,0 +1,37 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Service index{% endblock %}
+
+{% block content %}
+    <h1>Service index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for service in services %}
+            <tr>
+                <td>{{ service.id }}</td>
+                <td>{{ service.Nom }}</td>
+                <td>{{ service.Description }}</td>
+                <td>
+                    <a class="btn btn-block btn-outline-success" href="{{ path('service_show', {'id': service.id}) }}">show</a>
+                    <a class="btn btn-block btn-outline-info"href="{{ path('service_edit', {'id': service.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-info" href="{{ path('service_new') }}">Create new</a>
+{% endblock %}

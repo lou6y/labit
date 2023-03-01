@@ -1,0 +1,43 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Produit index{% endblock %}
+
+{% block content %}
+    <h1>Produit index</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>DateAjout</th>
+            <th>Stock</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.Nom }}</td>
+                <td>{{ produit.Prix }}</td>
+                <td>{{ produit.DateAjout ? produit.DateAjout|date('Y-m-d') : '' }}</td>
+                <td>{{ produit.Stock }}</td>
+                <td>{{ produit.Description }}</td>
+                <td>{{ produit.Type ? 'New' : 'Used' }}</td>
+                <td><a class="btn btn-block btn-outline-success" href="{{ path('produit_show', {'id': produit.id}) }}">show</a></td>
+                <td><a class="btn btn-block btn-outline-info" href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-info" href="{{ path('produit_new') }}">Create new</a>
+{% endblock %}

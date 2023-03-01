@@ -1,0 +1,20 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Edit Review{% endblock %}
+
+{% block content %}
+<main>
+    <section class="section-md bg-default decor-text" >
+        <div class="container">
+    <h4 class="heading-decorated">Edit Review</h4>
+
+     {{ include('review/_form.html.twig', {'button_label': 'Update'}) }}
+     {{ include('review/_delete_form.html.twig') }}
+
+    <a href="{{ path('review_index') }}">Back to list</a>
+
+
+        </div>
+    </section>
+</main>
+{% endblock %}

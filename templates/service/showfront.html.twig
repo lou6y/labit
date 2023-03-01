@@ -1,0 +1,31 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Service{% endblock %}
+
+{% block content %}
+    <h4 class=heading-decorated">Service</h4>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Nom</th>
+            <td>{{ service.Nom }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ service.Description }}</td>
+        </tr>
+        <tr>
+            <th>Description Complete</th>
+            <td>{{ service.DescriptionLong }}</td>
+        </tr>
+        <tr>
+            <th>Image</th>
+            <td><img src="{{vich_uploader_asset(service,'imageFile')}}" height="300" width="300" alt="Img"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('service_index') }}">Back to list</a>
+
+{% endblock %}

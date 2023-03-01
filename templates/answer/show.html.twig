@@ -1,0 +1,30 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Answer{% endblock %}
+
+{% block content %}
+    <h1>Answer</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ answer.id }}</td>
+            </tr>
+            <tr>
+                <th>DateAns</th>
+                <td>{{ answer.DateAns ? answer.DateAns|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ answer.Description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('message_back') }}">Back to list</a>
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('answer_edit', {'id': answer.id}) }}">Edit</a>
+
+    {{ include('answer/_delete_form.html.twig') }}
+{% endblock %}

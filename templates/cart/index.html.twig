@@ -1,0 +1,65 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Votre panier{% endblock %}
+
+{% block content %}
+    <main>
+    <section class="section-md bg-default decor-text" >
+    <div class="container">
+
+        <h4 class="heading-decorated">Votre panier</h4>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for element in dataPanier %}
+            <tr>
+                <td>{{ element.produit.nom }}</td>
+                <td class="text-end">{{ element.produit.prix }} Dt</td>
+                <td>{{ element.quantite }}</td>
+                <td class="text-end">{{ element.quantite * element.produit.prix }} Dt</td>
+                <td><a style="max-width: 50px;" href="{{path("cart_add", {id: element.produit.id})}}" class="btn btn-block btn-outline-info">+</a>
+                <a style="max-width: 50px;" href="{{path("cart_remove", {id: element.produit.id})}}" class="btn btn-block btn-outline-success">-</a></td>
+                <td>
+                    <a href="{{path("commande_new", {idproduit: element.produit.id, prixtotale: element.quantite * element.produit.prix })}}" class="btn btn-block btn-outline-info" onclick="return confirm('Etes vous sûr de confirmer la commande?');">
+                        commander
+                    </a>
+                </td>
+                <td><a style="max-width: 100px;" href="{{path("cart_delete", {id: element.produit.id})}}" class="btn btn-block btn-outline-danger">delete</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5" class="text-center">Votre panier est vide</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td class="text-end">{{ total }} Dt</td>
+
+            <td>
+                <a href="{{path("cart_delete_all")}}" class="btn btn-block btn-outline-danger" onclick="return confirm('Etes vous sûr de tous supprimer?');">
+                    delete all
+                </a>
+            </td>
+
+
+        </tr>
+        </tfoot>
+    </table>
+        <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('produit_index') }}">Back to produits</a>
+        <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('commande_index') }}">Show my commandes</a>
+    </div>
+    </section>
+    </main>
+
+{% endblock %}

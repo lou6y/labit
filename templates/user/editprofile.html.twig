@@ -1,0 +1,15 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Modifier le profile{% endblock %}
+
+{% block content %}
+<main>
+    <div class="section-md bg-default decor-text" data-content="Modif">
+        <div class="container">
+            <h4>Modification du profil de {{ app.user.username }}</h4>
+            {{ form(form) }}
+        </div>
+
+    </div>
+</main>
+{% endblock %}

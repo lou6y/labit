@@ -1,0 +1,27 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}Modifier le profile{% endblock %}
+
+{% block content %}
+    <main>
+        <div class="section-md bg-default decor-text" data-content="Modif">
+            <div class="container">
+                <h4>Modification du mot de passe de {{ app.user.username }}</h4>
+                <form method="post">
+                    <div class="form-field">
+                        <label for="pass">Mot de passe</label>
+                        <input type="password" id="pass" name="pass" class="form-control">
+                    </div>
+                    <div class="form-field">
+                        <label for="pass2">Confirmer le mot de passe</label>
+                        <input type="password" id="pass2" name="pass2" class="form-control">
+                    </div>
+                    <button class="btn blue">Valider</button>
+
+                </form>
+            </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}

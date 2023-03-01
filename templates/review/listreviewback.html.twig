@@ -1,0 +1,34 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+{% block content %}
+    <h1>My Reviews</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Daterev</th>
+            <th>Text</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for review in reviews %}
+            <tr>
+                <td>{{ review.id }}</td>
+                <td>{{ review.Daterev ? review.Daterev|date('Y-m-d') : '' }}</td>
+                <td>{{ review.Text }}</td>
+                {% if is_granted('ROLE_MODERATOR') %}
+                <td><a class="btn btn-block btn-outline-info" href="{{ path('review_show', {'id': review.id}) }}">show</a> </td>
+                <td><a class="btn btn-block btn-outline-danger" href="{{ path('review_deleteback', {'id': review.id}) }}" onclick="return confirm('Etes vous sûr de supprimer cet review?');">delete</a> </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun review trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'frontend/basefront.html.twig' %}
+
+{% block title %}New Commande{% endblock %}
+
+{% block content %}
+    <h4>Create new Commande</h4>
+
+    {{ include('commande/_form.html.twig') }}
+
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('cart_index') }}">Back to Panier</a>
+    <a style="max-width: 300px; margin-left: auto; margin-right: auto;" class="btn btn-block btn-outline-info" href="{{ path('commande_index') }}">Back to Commandes</a>
+
+{% endblock %}

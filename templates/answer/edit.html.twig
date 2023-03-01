@@ -1,0 +1,14 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Edit Answer{% endblock %}
+
+{% block content %}
+    <h1>Edit Answer</h1>
+
+    {{ include('answer/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('answer/_delete_form.html.twig') }}
+
+    <a href="{{ path('answer_show', {'id': answer.id}) }}">Back to answer</a>
+
+
+{% endblock %}

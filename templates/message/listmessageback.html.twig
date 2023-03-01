@@ -1,0 +1,43 @@
+{% extends 'backend/baseback.html.twig' %}
+
+{% block title %}Liste des messages{% endblock %}
+{% block content %}
+    <h1>Messages</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>DateMsg</th>
+            <th>Object</th>
+            <th>Description</th>
+            <th>Statut</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for message in messages %}
+            <tr>
+                <td>{{ message.id }}</td>
+                <td>{{ message.DateMsg ? message.DateMsg|date('Y-m-d') : '' }}</td>
+                <td>{{ message.Object }}</td>
+                <td>{{ message.Description }}</td>
+                <td>{{ message.Statut ? 'Answered' : 'Not Answered' }}</td>
+                {% if is_granted('ROLE_MODERATOR') %}
+                    <td><a class="btn btn-block btn-outline-success" href="{{ path('message_show', {'id': message.id}) }}">show</a> </td>
+                    <td><a class="btn btn-block btn-outline-danger" href="{{ path('message_deleteback', {'id': message.id}) }}" onclick="return confirm('Etes vous sûr de supprimer cet review?');">delete</a> </td>
+                {% endif %}
+                {% if message.Statut ==0 %}
+                    <td> <a class="btn btn-block btn-outline-info" href="{{ path('answer_new',{'idmsg':message.id}) }}"  >repondre</a> </td>
+                {% else %}
+                    <td> <a class="btn btn-block btn-outline-info" href="{{ path('answer_show',{'idmsg':message.id}) }}"  >consulter reponse</a> </td>
+                {% endif %}
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun message trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

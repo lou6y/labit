@@ -1,0 +1,296 @@
+{% extends 'frontend/basefront.html.twig' %}
+{% block title %}About{% endblock %}
+{% block content %}
+    <main>
+        <!--features-->
+        <!-- Our Features-->
+        <section class="section-md bg-gray-lighter text-center decor-text" data-content="About">
+            <div class="container">
+                <div class="row justify-content-lg-center">
+                    <div class="col-lg-10 col-xl-8">
+                        <h4 class="heading-decorated">About us</h4>
+                        <p style="font-size: 20px;">LAB-IT est une entreprise tunisienne qui fait la vente des matériels informatiques, et avec nos techniciens de maintenance informatique, nous proposons des services en atelier de réparation. Les problèmes de réparation d’ordinateur sont de toutes formes et tailles. Quel que soit le problème d’ordinateur portable, bureautique nous pouvons vous aider !  </p>
+                          <p style="font-size: 20px;">  LAB-IT intervient également pour réaliser et gérer vos sites internet, en créant des solutions innovantes et efficaces améliorant votre visibilité sur internet. Nous créons des sites internet uniques, des chartes graphiques sur mesure pour tous vos projets internet (site e-commerce, vitrine…). <br> Et voici notre;</p>
+                <div style="  display: flex;" class="row row-50">
+                    <div class="column" style=" flex: 50%;">
+                        <a href="{{ asset('/service') }}" style="font-size: 40px; color:#41516A">
+                        <img src="{{ asset('frontend/images/serviceicone.png') }}" alt="Services" style="width:200px; height:200px">
+                            <br> SERVICES
+                        </a>
+                    </div>
+                    <div class="column" style=" flex: 50%;">
+                        <a href="{{ asset('/category') }}" style="font-size: 40px; color:#41516A">
+                        <img src="{{ asset('frontend/images/produiticone.png') }}" alt="Produits" style="width:200px; height:200px">
+                            <br> PRODUITS
+                        </a>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About us-->
+        <section class="section-md bg-gray-lighter text-center decor-text" data-content="Services">
+               <div class="container">
+                   <h4 class="heading-decorated">Why choose LAB-IT?</h4>
+                   <div class="row row-50">
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-feather"></span></div>
+                        <p class="blurb__title">Clean and Crispy</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-menu3"></span></div>
+                        <p class="blurb__title">Novi Builder</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-bag2"></span></div>
+                        <p class="blurb__title">Advanced</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-rocket"></span></div>
+                        <p class="blurb__title">Built For Speed</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-equalizer"></span></div>
+                        <p class="blurb__title">Flexible and Multipurpose</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <!-- Blurb circle-->
+                    <article class="blurb blurb-circle blurb-circle_centered">
+                        <div class="blurb-circle__icon"><span class="icon linear-icon-file-search"></span></div>
+                        <p class="blurb__title">Simple & Easy</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section class="object-wrap decor-text">
+            <div class="bg-decor d-flex align-items-center justify-content-center" data-parallax-scroll="{&quot;y&quot;: 70, &quot;x&quot;: 50, &quot;smoothness&quot;: 30}"><img src="{{ asset('frontend/images/bg-decor-10.png') }}" alt=""/>
+            </div>
+            <div class="section-lg">
+                <div class="container">
+                    <div class="row justify-content-lg-center">
+                        <div class="col-lg-10 col-xl-8">
+                            <div class="row row-30">
+                                <div class="col-xl-6">
+                                    <!-- Blurb minimal-->
+                                    <article class="blurb blurb-minimal">
+                                        <div class="unit flex-row unit-spacing-md">
+                                            <div class="unit-left">
+                                                <div class="blurb-minimal__icon"><span class="icon linear-icon-menu3"></span></div>
+                                            </div>
+                                            <div class="unit-body">
+                                                <p class="blurb__title heading-6"><a href="#">Award-winning</a></p>
+                                                <p>We have received numerous awards for our services, concepts, and ideas.</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-xl-6">
+                                    <!-- Blurb minimal-->
+                                    <article class="blurb blurb-minimal">
+                                        <div class="unit flex-row unit-spacing-md">
+                                            <div class="unit-left">
+                                                <div class="blurb-minimal__icon"><span class="icon linear-icon-users2"></span></div>
+                                            </div>
+                                            <div class="unit-body">
+                                                <p class="blurb__title heading-6"><a href="#">Expert team</a></p>
+                                                <p>We are a team of dedicated techniciens and development professionals.</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col-md-12">
+                                    <!-- Linear progress bar-->
+                                    <div class="progress-linear progress-linear-modern">
+                                        <div class="progress-header">
+                                            <p>Dedication</p><span class="progress-value">49</span>
+                                        </div>
+                                        <div class="progress-bar-linear-wrap">
+                                            <div class="progress-bar-linear"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Linear progress bar-->
+                                    <div class="progress-linear progress-linear-modern">
+                                        <div class="progress-header">
+                                            <p>Experience</p><span class="progress-value">29</span>
+                                        </div>
+                                        <div class="progress-bar-linear-wrap">
+                                            <div class="progress-bar-linear"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Linear progress bar-->
+                                    <div class="progress-linear progress-linear-modern">
+                                        <div class="progress-header">
+                                            <p>Creativity</p><span class="progress-value">86</span>
+                                        </div>
+                                        <div class="progress-bar-linear-wrap">
+                                            <div class="progress-bar-linear"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- services-->
+        <section class="section-md bg-default">
+            <div class="bg-decor d-flex align-items-center justify-content-end" data-parallax-scroll="{&quot;x&quot;: -100, &quot;y&quot;: -30, &quot;smoothness&quot;: 30}"><img src="{{ asset('frontend/images/bg-decor-9.png') }}" alt=""/>
+            </div>
+        </section>
+
+        <!-- Counters-->
+        <!-- counters-->
+        <section class="section parallax-container context-dark" data-parallax-img="images/parallax-1.jpg">
+            <div class="parallax-content">
+                <div class="container section-md">
+                    <div class="row justify-content-md-center row-50">
+                        <div class="col-md-6 col-lg-3">
+                            <!-- Box counter-->
+                            <article class="box-counter">
+                                <div class="box-counter__icon linear-icon-coffee-cup"></div>
+                                <div class="box-counter__wrap">
+                                    <div class="counter">100</div>
+                                </div>
+                                <p class="box-counter__title">Projects Annually</p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <!-- Box counter-->
+                            <article class="box-counter">
+                                <div class="box-counter__icon linear-icon-cube"></div>
+                                <div class="box-counter__wrap">
+                                    <div class="counter">45</div>
+                                </div>
+                                <p class="box-counter__title">Awards</p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <!-- Box counter-->
+                            <article class="box-counter">
+                                <div class="box-counter__icon linear-icon-chevrons-expand-horizontal"></div>
+                                <div class="box-counter__wrap">
+                                    <div class="counter">98</div><span>%</span>
+                                </div>
+                                <p class="box-counter__title">Positive Reviews</p>
+                            </article>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <!-- Box counter-->
+                            <article class="box-counter">
+                                <div class="box-counter__icon linear-icon-mustache-glasses"></div>
+                                <div class="box-counter__wrap">
+                                    <div class="counter">147</div><span>k</span>
+                                </div>
+                                <p class="box-counter__title">Happy Customers</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-md bg-default text-center decor-text" data-content="Contact details">
+            <div class="container">
+                <h4 class="heading-decorated">Contact details</h4>
+                <div class="row row-50">
+                    <div class="col-md-5 col-lg-4">
+
+                        <ul class="list-sm contact-info">
+                            <li>
+                                <dl class="list-terms-inline">
+                                    <dt>Address</dt>
+                                    <dd>Rue des Catacombes, Cité Ezzahra (Souk Lahad), Sousse 4002</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="list-terms-inline">
+                                    <dt>Phones</dt>
+                                    <dd>
+                                        <ul class="list-semicolon">
+                                            <li><a href="tel:#">(216) 50 234 911</a></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl class="list-terms-inline">
+                                    <dt>Opening Hours</dt>
+                                    <dd>Mn-Fr: 8:30 am-6:30 pm</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <ul class="list-inline-sm">
+                                    <li><a class="icon-sm fa-facebook icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-twitter icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-google-plus icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-vimeo icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-youtube icon" href="#"></a></li>
+                                    <li><a class="icon-sm fa-pinterest-p icon" href="#"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="button button-primary" href={{asset('/message')}}>Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-7 col-lg-8">
+                        <div class="container">
+                            <img src="{{ asset('frontend/images/map.png') }}" alt="" style="width: 650px; height: 350px"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials-->
+        <section class="section-md bg-default text-center decor-text" data-content="Testimonials">
+            <div class="container">
+                <h4 class="heading-decorated">WHAT PEOPLE SAY</h4>
+                <div class="row row-50">
+                    {% for review in reviews %}
+                    <div class="col-md-6">
+                        <!-- Quote default-->
+                        <div class="quote-default quote-default_left">
+                            <svg class="quote-default__mark" version="1.1" baseprofile="tiny" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40.234px" height="33.484px" viewbox="0 0 30.234 23.484" xml:space="preserve">
+                  <g>
+                      <path d="M12.129,0v1.723c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959							c0,0.445,0.07,0.773,0.211,0.984c0.093,0.141,0.199,0.211,0.316,0.211c0.117,0,0.293-0.082,0.527-0.246							c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.519,0.545,3.551,1.635c1.031,1.09,1.547,2.385,1.547,3.885							c0,1.57-0.592,2.953-1.775,4.148c-1.184,1.195-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							C0.715,19.441,0,17.274,0,14.555c0-3.164,0.972-6,2.918-8.508C4.863,3.539,7.933,1.524,12.129,0z M29.039,0v1.723							c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959c0,0.445,0.07,0.773,0.211,0.984							c0.094,0.141,0.199,0.211,0.316,0.211s0.293-0.082,0.527-0.246c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.52,0.545,3.551,1.635							s1.547,2.385,1.547,3.885c0,1.57-0.592,2.953-1.775,4.148s-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							s-2.145-3.785-2.145-6.504c0-3.164,0.973-6,2.918-8.508C21.773,3.539,24.844,1.524,29.039,0z"></path>
+                  </g>
+                </svg>
+                            <div class="quote-default__text">
+                                <p class="q">{{ review.Text }}</p>
+                            </div>
+                            <p class="quote-default__cite">{{ review.IdUser.username }}</p>
+                        </div>
+                    </div>
+                    {% else %}
+                        <tr>
+                            <td colspan="4">Aucun review trouvé</td>
+                        </tr>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+{% endblock %}
